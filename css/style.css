@@ -121,10 +121,16 @@ body {
     font-weight: 500;
     transition: var(--transition-fast);
     position: relative;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--radius-md);
+    outline: none;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--primary-color);
+    background-color: rgba(99, 102, 241, 0.05);
+    transform: translateY(-1px);
 }
 
 .nav-link::after {
@@ -132,14 +138,17 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     transition: var(--transition-fast);
+    border-radius: 1px;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 80%;
 }
 
 .hamburger {
@@ -1553,12 +1562,22 @@ html {
 }
 
 /* Focus Styles for Accessibility */
-.btn:focus,
-.nav-link:focus,
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    transform: translateY(-1px);
+}
+
+.nav-link:focus {
+    /* Styling already handled above */
+    outline: none;
+}
+
 input:focus,
 textarea:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 /* Print Styles */
