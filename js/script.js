@@ -303,7 +303,7 @@ window.addEventListener('load', () => {
 
 // Simple analytics tracking (placeholder)
 function trackEvent(eventName, eventData = {}) {
-    // This is where you would integrate with Google Analytics or other analytics services
+    // This is where you would integrate with analytics services
     console.log('Analytics Event:', eventName, eventData);
 }
 
